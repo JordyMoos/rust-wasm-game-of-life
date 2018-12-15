@@ -1,54 +1,46 @@
-<meta charset="utf-8"/>
+# Rust Wasm Game of Life
 
-# 🦀🕸️ `wasm-pack-template`
+[Totally based on the book](https://rustwasm.github.io/book/)
 
-A template for kick starting a Rust and WebAssembly project using
-[`wasm-pack`](https://github.com/rustwasm/wasm-pack).
+## Required tools
 
-This template is designed for compiling Rust libraries into WebAssembly and
-publishing the resulting package to NPM.
+- [Rust toolchain](https://www.rust-lang.org/tools/install)
+- [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
+- [npm](https://www.npmjs.com/get-npm)
 
-* Want to use the published NPM package in a Website? [Check out
-  `create-wasm-app`.](https://github.com/rustwasm/create-wasm-app)
-* Want to make a monorepo-style Website without publishing to NPM? Check out
-  [`rust-webpack-template`](https://github.com/rustwasm/rust-webpack-template)
-  and/or
-  [`rust-parcel-template`](https://github.com/rustwasm/rust-parcel-template).
+## Build project
 
-## 🔋 Batteries Included
-
-* [`wasm-bindgen`](https://github.com/rustwasm/wasm-bindgen) for communicating
-  between WebAssembly and JavaScript.
-* [`console_error_panic_hook`](https://github.com/rustwasm/console_error_panic_hook)
-  for logging panic messages to the developer console.
-* [`wee_alloc`](https://github.com/rustwasm/wee_alloc), an allocator optimized
-  for small code size.
-
-## 🚴 Usage
-
-### 🐑 Use `cargo generate` to Clone this Template
-
-[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
-
-```
-cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name my-project
-cd my-project
-```
-
-### 🛠️ Build with `wasm-pack build`
+This will create the wasm code.
+Do this every time you change your rust code.
 
 ```
 wasm-pack build
 ```
 
-### 🔬 Test in Headless Browsers with `wasm-pack test`
+
+## Install npm
 
 ```
-wasm-pack test --headless --firefox
+cd www
+npm install
 ```
 
-### 🎁 Publish to NPM with `wasm-pack publish`
+## Link local package to the www project
 
 ```
-wasm-pack publish
+cd pkg
+npm link
 ```
+
+```
+cd www
+npm link wasm-game-of-life
+```
+
+## Run locally
+
+```
+cd www
+npm start
+```
+
