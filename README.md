@@ -2,6 +2,8 @@
 
 [Totally based on the book](https://rustwasm.github.io/book/)
 
+![Game of Life](./game-of-life.png)
+
 ## Required tools
 
 - [Rust toolchain](https://www.rust-lang.org/tools/install)
